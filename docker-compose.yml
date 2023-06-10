@@ -1,0 +1,15 @@
+version: "3.5"
+services:
+  mysql:
+    container_name: mysql
+    image: percona:8.0
+    restart: 'always'
+    environment:
+     - "MYSQL_ROOT_PASSWORD=mysecretpassword"
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+
+volumes:
+  dbdata:
